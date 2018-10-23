@@ -1,0 +1,101 @@
+loan_amnt,term,int_rate,installment,grade,home_ownership,annual_inc,verification_status,loan_status,delinq_2yrs,pub_rec
+15000, 60 months,18.3,384.1,E,MORTGAGE,32076,Verified,Fully Paid,0,0
+20000, 36 months,17.9,722.95,E,RENT,160000,Source Verified,Fully Paid,0,0
+18000, 60 months,11.4,395.78,B,MORTGAGE,57500,Not Verified,Fully Paid,1,0
+12000, 36 months,7.49,373.22,A,RENT,66000,Not Verified,Fully Paid,0,0
+13500, 36 months,9.99,435.55,B,MORTGAGE,76000,Not Verified,Fully Paid,0,0
+6000, 36 months,10.9,196.41,B,MORTGAGE,56000,Not Verified,Fully Paid,0,0
+8000, 36 months,10.9,261.88,B,RENT,20000,Source Verified,Fully Paid,0,0
+18000, 36 months,9.99,580.73,B,MORTGAGE,65000,Source Verified,Fully Paid,0,0
+12400, 60 months,18.3,317.52,E,MORTGAGE,55000,Source Verified,Fully Paid,0,0
+3000, 36 months,7.49,93.31,A,OWN,70000,Source Verified,Fully Paid,0,0
+16000, 60 months,17.4,401.87,D,MORTGAGE,67548,Verified,Fully Paid,1,0
+35000, 36 months,12.9,1179.12,C,MORTGAGE,80000,Verified,Fully Paid,0,0
+5000, 36 months,9.99,161.32,B,RENT,90000,Not Verified,Fully Paid,0,0
+4800, 36 months,15.2,166.94,C,RENT,48000,Source Verified,Charged Off,0,0
+25000, 60 months,13.4,575.12,C,MORTGAGE,63000,Verified,Fully Paid,1,0
+6200, 36 months,10.9,202.96,B,MORTGAGE,46709.04,Verified,Fully Paid,0,0
+12000, 36 months,12.9,404.27,C,MORTGAGE,48000,Source Verified,Fully Paid,0,0
+8000, 60 months,16.4,196.64,D,RENT,90000,Not Verified,Fully Paid,0,0
+30000, 60 months,22.4,836.78,G,RENT,54000,Verified,Fully Paid,0,0
+11000, 36 months,16.4,389.4,D,MORTGAGE,39960,Source Verified,Fully Paid,1,0
+14000, 60 months,20.2,372.87,F,RENT,42744,Not Verified,Charged Off,0,0
+7750, 60 months,16.4,190.49,D,MORTGAGE,65000,Not Verified,Charged Off,0,0
+3600, 36 months,11.4,118.7,B,RENT,45000,Not Verified,Fully Paid,0,1
+15000, 36 months,12.9,505.34,C,RENT,210000,Source Verified,Fully Paid,0,0
+6000, 60 months,7.49,120.2,A,MORTGAGE,72744,Source Verified,Fully Paid,0,0
+12000, 60 months,15.9,291.76,D,MORTGAGE,56000,Source Verified,Fully Paid,0,1
+22500, 60 months,10.9,489.1,B,MORTGAGE,93600,Source Verified,Fully Paid,0,0
+6000, 36 months,9.99,193.58,B,OWN,53000,Source Verified,Fully Paid,0,0
+5075, 36 months,5.99,154.37,A,MORTGAGE,60000,Not Verified,Fully Paid,0,0
+35000, 60 months,13.4,805.17,C,RENT,120000,Verified,Fully Paid,0,0
+4000, 36 months,19.2,147.22,E,RENT,51630,Not Verified,Fully Paid,2,0
+2500, 36 months,6.99,77.19,A,MORTGAGE,60000,Source Verified,Fully Paid,0,0
+6000, 36 months,16.4,212.4,D,RENT,72000,Verified,Fully Paid,0,1
+4000, 36 months,7.49,124.41,A,OWN,30000,Source Verified,Fully Paid,0,0
+6000, 60 months,10.9,130.43,B,RENT,63120,Source Verified,Fully Paid,0,0
+20400, 60 months,11.4,448.55,B,MORTGAGE,44400,Verified,Fully Paid,0,0
+12000, 60 months,14.7,284.16,C,MORTGAGE,97936,Verified,Fully Paid,0,0
+12000, 36 months,6.99,370.48,A,MORTGAGE,92000,Source Verified,Fully Paid,0,0
+9000, 36 months,10.5,292.91,B,MORTGAGE,56000,Not Verified,Fully Paid,0,0
+20000, 60 months,18.7,516.51,E,RENT,75996,Verified,Fully Paid,1,0
+6000, 36 months,9.99,193.58,B,RENT,27031,Not Verified,Fully Paid,0,0
+3000, 36 months,11.4,98.92,B,RENT,42000,Not Verified,Fully Paid,0,0
+11600, 60 months,13.4,266.86,C,RENT,41000,Not Verified,Fully Paid,0,0
+6000, 36 months,16.4,212.4,D,MORTGAGE,51200,Source Verified,Fully Paid,0,0
+7200, 36 months,9.99,232.29,B,MORTGAGE,50000,Not Verified,Charged Off,0,1
+8000, 36 months,9.99,258.1,B,RENT,62000,Verified,Fully Paid,0,0
+10000, 36 months,10.9,327.34,B,MORTGAGE,150000,Verified,Charged Off,0,0
+10000, 36 months,7.49,311.02,A,RENT,125000,Not Verified,Fully Paid,0,0
+4200, 36 months,7.49,130.63,A,MORTGAGE,75000,Not Verified,Fully Paid,0,0
+15000, 36 months,11.9,498.15,B,MORTGAGE,74000,Source Verified,Fully Paid,0,0
+3525, 60 months,10.9,76.63,B,MORTGAGE,129996,Source Verified,Fully Paid,0,0
+10000, 36 months,11.4,329.72,B,MORTGAGE,68000,Verified,Fully Paid,0,0
+27000, 60 months,18.3,691.37,E,OWN,62000,Source Verified,Fully Paid,0,0
+16000, 60 months,10.9,347.8,B,RENT,29000,Not Verified,Fully Paid,0,0
+2600, 36 months,19.2,95.69,E,RENT,21600,Source Verified,Fully Paid,1,0
+6000, 36 months,5.42,180.96,A,MORTGAGE,1.00E+05,Not Verified,Fully Paid,0,0
+29100, 36 months,15.9,1022.93,D,RENT,70000,Verified,Fully Paid,0,0
+6400, 36 months,15.9,224.98,D,MORTGAGE,50000,Source Verified,Charged Off,0,1
+9800, 36 months,7.49,304.8,A,MORTGAGE,50000,Not Verified,Charged Off,0,0
+6000, 36 months,5.99,182.51,A,RENT,36000,Verified,Fully Paid,0,0
+17500, 60 months,16.4,430.14,D,MORTGAGE,31200,Source Verified,Fully Paid,1,0
+15000, 36 months,12.9,505.34,C,RENT,46890,Verified,Fully Paid,1,0
+8000, 36 months,8.49,252.51,A,RENT,80500,Not Verified,Fully Paid,0,0
+2100, 36 months,11.4,69.24,B,MORTGAGE,54996,Not Verified,Fully Paid,0,0
+6000, 36 months,15.2,208.67,C,MORTGAGE,70000,Verified,Fully Paid,0,0
+24000, 60 months,13.4,552.12,C,MORTGAGE,98000,Verified,Fully Paid,0,0
+5000, 60 months,7.49,100.17,A,MORTGAGE,72600,Not Verified,Fully Paid,0,0
+20000, 36 months,7.49,622.04,A,RENT,39915,Verified,Fully Paid,0,0
+7000, 36 months,9.99,225.84,B,RENT,100840,Source Verified,Fully Paid,0,0
+25000, 36 months,10.9,818.35,B,MORTGAGE,57120,Verified,Fully Paid,0,0
+4200, 36 months,15.6,146.88,D,OWN,24000,Source Verified,Fully Paid,0,0
+4000, 60 months,11.9,88.96,B,RENT,26004,Source Verified,Charged Off,0,0
+35000, 36 months,11.9,1162.34,B,RENT,85000,Verified,Fully Paid,0,0
+11200, 36 months,16.8,398.7,D,RENT,26000,Not Verified,Charged Off,3,0
+8000, 36 months,13.4,271.45,C,RENT,60000,Source Verified,Fully Paid,0,0
+6500, 36 months,17.4,233.34,D,RENT,42000,Source Verified,Fully Paid,0,0
+1800, 36 months,7.49,55.99,A,MORTGAGE,55000,Not Verified,Fully Paid,0,0
+5000, 36 months,6.99,154.37,A,RENT,42000,Source Verified,Fully Paid,0,0
+6000, 36 months,11.9,199.26,B,MORTGAGE,40000,Source Verified,Fully Paid,0,0
+15000, 36 months,11.9,498.15,B,MORTGAGE,43000,Source Verified,Fully Paid,0,1
+35000, 60 months,13.4,805.17,C,MORTGAGE,80000,Verified,Fully Paid,0,0
+14000, 36 months,8.49,441.89,A,RENT,46000,Source Verified,Fully Paid,1,0
+12000, 36 months,15.2,417.34,C,MORTGAGE,88000,Source Verified,Charged Off,0,2
+8000, 36 months,6.99,246.99,A,MORTGAGE,70000,Source Verified,Fully Paid,0,0
+3200, 36 months,11.9,106.28,B,RENT,33600,Not Verified,Fully Paid,0,0
+16000, 36 months,10.9,523.75,B,MORTGAGE,40000,Not Verified,Fully Paid,0,0
+9000, 36 months,16.4,318.6,D,MORTGAGE,82000,Verified,Fully Paid,0,0
+12000, 60 months,11.9,266.88,B,RENT,65500,Source Verified,Fully Paid,0,1
+14500, 36 months,7.49,450.98,A,MORTGAGE,76500,Not Verified,Charged Off,0,0
+4500, 36 months,7.49,139.96,A,RENT,32400,Source Verified,Fully Paid,0,0
+8450, 60 months,11.4,185.8,B,RENT,42000,Source Verified,Charged Off,0,0
+8000, 36 months,13.4,271.45,C,MORTGAGE,60000,Source Verified,Fully Paid,0,0
+4800, 36 months,10.5,156.22,B,RENT,32000,Not Verified,Fully Paid,0,0
+9000, 36 months,11.4,296.75,B,MORTGAGE,110000,Not Verified,Charged Off,0,0
+10000, 60 months,12.9,227.48,C,RENT,50000,Source Verified,Fully Paid,0,0
+5000, 36 months,13.4,169.66,C,MORTGAGE,113000,Source Verified,Fully Paid,0,0
+14975, 60 months,13.4,344.5,C,RENT,49100,Source Verified,Fully Paid,0,0
+3600, 36 months,15.6,125.9,D,RENT,132000,Not Verified,Fully Paid,2,0
+15000, 36 months,18.3,545.23,E,OWN,33600,Verified,Fully Paid,0,0
+14675, 60 months,11.4,322.67,B,RENT,28000,Verified,Charged Off,0,0

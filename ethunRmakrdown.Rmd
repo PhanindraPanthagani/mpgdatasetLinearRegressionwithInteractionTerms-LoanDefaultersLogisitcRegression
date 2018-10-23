@@ -1,0 +1,196 @@
+---
+title: "ethunRMarkdown"
+author: "Jaswanth"
+date: "October 22, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Assignment}
+##Task A 
+
+loan <- read.csv("LoanData_train.csv")
+summary(loan)
+##A1.
+##Ans: HEre our Predicted Variable loan_status is a binary decision variable  which can take the values "Fully Paid" or "Charged Off"
+#Because of the binary response variable we can use logistic regression. Rather than modelling the response Y directly, logistic regression models the probability that Y belongs to a particular category, in our case the probability of a non-performing loan. Also from summary we see that the predictor variables are varying a lot and a logit transform would normalize the variable to a smaller range . 
+
+##A2:
+#Ans : I wouldn't change the Loan$grade into a numeric variable as now , if we are modelling it would take into acccount different grades as different variables like gradeB,gradeC,gradeD ... and we can get the significance of each of these grades . We can know which particular grade of employee is more significant for loan_status based on the probability. Hence keeeping it as is a Numeric variable
+
+##A3:
+
+library(dplyr)
+loan = loan %>%
+        mutate(loan_outcome = ifelse(loan_status %in% c('Charged Off' , 'Default') , 
+                                     1, 
+                                     ifelse(loan_status == 'Fully Paid' , 0 , 'No info')
+                                     ))
+barplot(table(loan$loan_outcome) , col = 'lightblue')
+
+
+# Fit logistic regression
+
+loantrain <- loan
+class(loantrain$loan_outcome)
+loantrain$loan_outcome = as.numeric(loantrain$loan_outcome)
+glm.model = glm(loan_outcome ~ loan_amnt +int_rate+home_ownership+annual_inc+term+grade+installment+verification_status+delinq_2yrs+pub_rec, loantrain, family = binomial(link = 'logit'))
+summary(glm.model)
+
+##Ans : Estimate and Std. Error are :
+#Estimate is the mean coefficient estimate taken over various samples.
+#The tandard Error measures the average amount that the coefficient estimates vary from the actual average value of our response variable. We’d ideally want a lower number relative to its coefficients.We usally take the 95% confidence interval for this 
+
+##A4: 
+loan_test <- read.csv("Loandata_test.csv")
+prob=predict(glm.model,loan_test,type='response')
+
+prob
+
+##Ans: The signs of all the coefficents of predictors  are negative whichever terms are more significant. Hence this is the probability that the loan is Defaulted
+
+
+##A5: 
+pred <- prob<0.5
+#Pred are the predictor which are fully paid
+
+pred <- as.factor(pred)
+
+levels(pred) <- c('Fully Paid','Charged Off')
+#Levels of the predictor variable were changed to Fully Paid and Charged off 
+predactual <- loan_test$loan_status=="Fully Paid"
+
+ProportionofCorrectPredictions <- sum(pre=predactual)
+
+##A5Ans: Proportin of correct predictors using our model is 86% as given in the test_data. Hence our model is sufficiently accurate
+
+
+```
+
+
+
+
+
+
+
+
+
+##TaskB: 
+##B2.
+
+```{r TaskB2}
+
+
+
+mpg <- read.csv("auto_mpg_clean_train.csv")
+#Create a scaterplot of engine size and high way mileage
+library(ggplot2)
+p <- ggplot(data=mpg,mapping=aes(displacement,mpg))
+p
+
+#Check the right end of the graph. What do you find ? How could we explain the anomaly?
+#Ans : In the right end of the graph , there is an outlier point. This means for a higher engine displacement, there is still higher highway mileage.
+
+#To better illustrate the usual points, we can map another variable to an aesthetic.
+#Adding number of cylinders as the color for better perception.
+p+geom_point(aes(colour = factor(cylinders)))
+
+#Try to use other aesthetics for the mapping, shape, transparency, (by yourself)
+p + geom_point(aes(shape = factor(cylinders)))
+#Using different shapes for different number of cylinders
+
+#This is different from setting the color of the graph, which does not convey any information about a variable.
+
+
+##3. Faceting
+
+#Compare the relationship between displ and mpg for different types of cars
+?mpg
+ggplot(data=mpg)+
+  geom_point(mapping=aes(displacment,mpg))+
+  facet_wrap(~model.year)
+
+
+
+#the difference between (.~cylinders) and (cylinders~.)
+?mpg
+ggplot(data=mpg)+
+  geom_point(mapping=aes(displacement,mpg))+
+  facet_grid(cylinders~.)
+
+?mpg
+ggplot(data=mpg)+
+  geom_point(mapping=aes(displacement,mpg))+
+  facet_grid(.~cylinders)
+
+
+```
+
+##B2ANs:The initial set of predicors are  displacement,factor(cylinders) ,horsepower ,weight,acceleration , factor(model.year),factor(origin)
+
+##B3:
+```{r TaskB3}
+linearfitmpg <- lm(mpg ~ displacement+ factor(cylinders) + horsepower + weight+acceleration + factor(model.year)+factor(origin) , data = mpg)
+summary(linearfitmpg)
+
+##THe R2 value is 0.8738 which means our predictors explain 87.38% of the variance in mpg . The p values of many of the predictors are <0.05 which means these predictors are significant and the overall p-value is <2.2e-16 which means we can reject the NULL Hypothesis with a lot of confidence and our model is really efficient.
+
+
+```
+##THe R2 value is 0.8738 which means our predictors explain 87.38% of the variance in mpg . The p values of many of the predictors are <0.05 which means these predictors are significant and the overall p-value is <2.2e-16 which means we can reject the NULL Hypothesis with a lot of confidence and our model is really efficient.
+
+
+##B4:
+```{r TaskB4}
+mpgtest <- read.csv("auto_mpg_test.csv")
+
+predictedvalues=predict(linearfitmpg,mpgtest,type='response')
+
+mpgtest = mpgtest%>%
+         mutate(predictedvalues=predictedvalues)
+MSE <- mean((mpgtest$mpg-mpgtest$predictedvalues)^2)
+
+print(c("Mean Squared error is",MSE))
+
+
+
+```
+##B4 answer : s"Mean Squared error is" "5.61321044232433"
+
+##B5:
+```{r TaskB5}
+#Improving the model by adding interaction terms which is product of two good predictors
+summary(linearfitmpg)
+
+improvedlinearfitmpg <- lm(mpg ~ displacement+ factor(cylinders) + horsepower + weight+acceleration + factor(model.year)+factor(origin) +displacement*factor(cylinders) + displacement*weight , data = mpg)
+summary(improvedlinearfitmpg)
+
+##B5Ans: The new model improvedlinearfitmpg  has Multiple-R squared value 0.9002 which is better than the old model linearfitmpg Multiple R squared value 0.8738. Hence imporvedlinearfitting is a better model which makes sense because it had additional interaction terms which are basically product of significant terms in the original linear model
+
+#MSE for the new model 
+improvedpredictedvalues=predict(improvedlinearfitmpg,mpgtest,type='response')
+
+mpgtest = mpgtest%>%
+         mutate(improvedpredictedvalues=improvedpredictedvalues)
+improvedMSE <- mean((mpgtest$mpg-mpgtest$improvedpredictedvalues)^2)
+
+print(c("The improved MSE is",improvedMSE,"whereas actual MSE for just the linearfitmpg model was",MSE))
+
+anova(linearfitmpg,improvedlinearfitmpg)
+
+
+```
+
+##B5Ans: The new model improvedlinearfitmpg  has Multiple-R squared value 0.9002 which is better than the old model linearfitmpg Multiple R squared value 0.8738. Hence imporvedlinearfitting is a better model which makes sense because it had additional interaction terms which are basically product of significant terms in the original linear model.This also shows from the Anova statistics 
+
+##"The improved MSE  for improvedlinearfitmpg is  "5.60795440036625"whereas actual MSE for just the linearfitmpg model was "5.61321044232433"
+
